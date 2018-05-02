@@ -3,20 +3,33 @@
 <html> 
 
   <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Bali Guide / Travel"/>
+    <meta name="author" content="Brian Tjoajadi"/>
+    <meta name="keywords" content="Bali, Denpasar, Ubud, Hotels, Seminyak, Temples, Watersport, Guide, Kuta Beach, Bali Hotels, Things to do in Bali"/> 
     <title>Contact Us</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="Menubar.css">
     <link type="text/css" rel="stylesheet" href="tableexternal.css">
 	<style>
-        #p1 {
+        p {
             text-align: center;
-
         }
-	</style>
-	
+    </style>    
 	<script type="text/javascript">
 	/* Your JavaScript goes here */
+        function validate(){
+            var one = document.getElementById("form");
+            if (one.lname.value == ""){
+                alert("Please fill in the blank field")
+            }
+            else if (one.fname.value == ""){
+                alert("Please fill in the blank field")
+            }
+            else if (one.gender.value == false){
+                alert("Please choose a gender")
+            }
+        } 
 	</script>
   </head>
   <body>
@@ -52,7 +65,7 @@
     <br>
     </br>
     <h1>Contact Us</h1>
-    <form action="" method="post">
+    <form id="form" action="" method="post" onsubmit="return validate()">
         <p>
         Name: &nbsp; <input type="text" name="lname" size=20 maxlength="30"/> 
         </p>
@@ -61,16 +74,18 @@
         </p>
         <p>Gender: &nbsp; 
             <input type="radio" name="gender" value="male"/>Male 
-            <input type="radio" name='gender' value='female'/>Female</p>
+            <input type="radio" name='gender' value='female'/>Female
+        </p>
         <p>
             Comments</br>
             <textarea name="comments" cols=50 rows=4>
 
             </textarea>
         </p>
-
+        <p>
         <input type="submit" name="submit" value="Submit"/>
         <input type="reset" name="clear" value="Clear"/>
+        </p>
     </form>
   </body>
 </html>

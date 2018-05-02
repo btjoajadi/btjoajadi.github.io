@@ -12,14 +12,57 @@
     <link type="text/css" rel="stylesheet" href="Menubar.css">
 	<style>
         #p1 {
-            text-align: center;
+            margin: auto;
 
         }
-	</style>
-	
-	<script type="text/javascript">
-	/* Your JavaScript goes here */
-	</script>
+        #ss{
+            margin-left: auto; 
+            margin-right: auto;
+            display: block;
+        }
+        #slides{
+            visibility: hidden;
+            text-align: center;
+        }
+        #daimg{
+            width: 500px;
+            height: 450px;
+        }
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="jqFancyTransitions.1.8.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("div#ss").jqFancyTransitions(
+            {
+                width: 1000, height: 500, effect: "curtain", position: "right", strips: 1, stripedelay: 600, delay: 5000, navigation:false, direction:"bottom", 
+            });
+        });
+        function change(){
+            document.getElementById("b").innerHTML="Paradise on Earth"
+        }
+        function pretty(){
+            document.getElementById("b").style.color="navy"
+            document.getElementById("b").style.textDecoration="underline"
+        }
+        function ugly(){
+            document.getElementById("b").style.color="black"
+            document.getElementById("b").style.textDecoration="none"
+        }
+        var myimgs = new Array("kuta.jpg", "Baliedit.jpg", "https://a0.muscache.com/im/pictures/8bbc919d-8a2c-41a2-a608-c136b90fcb61.jpg?aki_policy=large", "https://www.johansens.com/wp-content/uploads/2017/12/Rock-Bar-Bali-at-AYANA-Sunset.jpg");
+        var c=0
+        function showSlides(){
+            document.getElementById("slides").style.visibility="visible"
+            var x = document.getElementById("daimg");
+            x.src = myimgs[c];
+            ++c;
+            if (c>=myimgs.length){
+                c=0;
+            }
+            setTimeout("showSlides()",5000);
+            
+        } 
+    </script>
   </head>
   <body>
     <div class="mbar"><!--this div encloses the entire menu bar-->
@@ -51,24 +94,41 @@
             Credits 
         </a>
     </div>
+    <p id=p1>
+    <div id="wrapper">
+        <div id="ss">
+            <img src="Baliedit.jpg" alt="" title="Bali" />
+            <img src="http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1480957710/HEADER-Facebook-Bali-bali1116.jpg?itok=NmPLtFMO" alt="" title="Bali" />
+            <img src="http://images.kuoni.co.uk/73/bali-39229790-1482324218-ImageGalleryLightboxLarge.jpg" alt="" title="Bali" />
+            <img src="https://dx-world.net/wp-content/uploads/2018/03/bali.jpg" alt="" title="Bali"/>
+        </div>  
+    </div>
+    </p>
     <br>
     </br>
     <main role="main" class="container">
         <div class="jumbotron">
-            <h1>Bali</h1>
+            <h1 id="b" onclick="change()" onmouseover="pretty()" onmouseout="ugly()">Bali</h1>
             <p class="lead">
                 A travel website for tourists who are visiting Bali. A compiled list of places to visit, hotels to stay, activities to do, etc., that allows users to go on a one-stop website for all things Bali.</br>
                 *Click on Denpasar and Uluwatu on the image below
             </p>
+            <p class="lead" id="hid" onclick="showSlides()">
+                Click here to show slide show
+            </p>
         </div>
     </main>
+        <p id="slides">
+            <img id="daimg" src="kuta.jpg">
+
+        </p>
+
     <map name='bali' id='bali'>
         <area shape='rect' coords='497,353,557,440' href='denpasar.htm' alt='Things to do in Denpasar'/>
         <area shape='rect' coords='434,451,542,512' href='uluwatu.htm' alt='Things to do in Uluwatu'/>
     </map>
-    <p id='p1'>
-        <img src=bali-map.jpg alt='Bali' title='Map of Bali' usemap="#bali"/>
+    <p>
+        <img src="bali-map.jpg" alt='Bali' title='Map of Bali' usemap="#bali"/> 
     </p>    
-    <p> </p>
   </body>
 </html>

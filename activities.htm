@@ -3,7 +3,10 @@
 <html> 
 
   <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Bali Guide / Travel"/>
+    <meta name="author" content="Brian Tjoajadi"/>
+    <meta name="keywords" content="Bali, Denpasar, Ubud, Hotels, Seminyak, Temples, Watersport, Guide, Kuta Beach, Bali Hotels, Things to do in Bali"/> 
     <title>Activities</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="Menubar.css">
@@ -20,9 +23,18 @@
             text-align: left;
         }
 	</style>
-	
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/renatorib/janimate/master/dist/janimate.min.js"></script>
 	<script type="text/javascript">
 	/* Your JavaScript goes here */
+        function change(){
+            document.getElementById("c1").src="https://bali-river-rafting.com/assets/images/ayung-river/bali-rafting-ayung-5.jpg"
+        }
+
+        function back(){
+            document.getElementById("c1").src="https://res.cloudinary.com/hstcxjula/image/upload/v1384741187/qsqnsxci2witrks99qpl.jpg"
+        }
+        
 	</script>
   </head>
   <body>
@@ -62,7 +74,7 @@
         <tr>
             <td class=c1>
                 White River Rafting<br>
-                <img class="rsto" src=https://res.cloudinary.com/hstcxjula/image/upload/v1384741187/qsqnsxci2witrks99qpl.jpg alt="White River Rafting" title="White River Rafting">
+                <img id="c1" class="rsto" src=https://res.cloudinary.com/hstcxjula/image/upload/v1384741187/qsqnsxci2witrks99qpl.jpg alt="White River Rafting" title="White River Rafting" onmouseover="change()" onmouseout="back()">
             </td>
             <td class=c2>
                 <p>
